@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/WallBaseTerrain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/BaseTerrain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/DecorationBaseTerrain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PhysicObjects/MesaEscritorio.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PhysicObjects/Cadeira.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PhysicObjects/Estante.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PhysicObjects/Lixeiro.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PhysicObjects/Anotações.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PhysicObjects/Livro1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://PhysicObjects/QuadroMissões.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/game_missions/Cases.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/Escritório.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.60108, 10.2446 )
+
+[node name="Escritório" type="Node2D"]
+script = ExtResource( 14 )
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="BaseTerrain" parent="Terrain" instance=ExtResource( 2 )]
+z_index = -1
+centered_textures = true
+tile_data = PoolIntArray( -65536, 10, 0, -65535, 6, 0, -65534, 6, 0, -65533, 6, 0, -65532, 6, 0, -65531, 6, 0, -65530, 6, 0, -65529, 6, 0, -65528, 8, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 1, 0, 458765, 0, 0, 458766, 0, 0 )
+
+[node name="DecorationBaseTerrain" parent="Terrain" instance=ExtResource( 3 )]
+mode = 1
+tile_data = PoolIntArray( -983027, 11, 0, -655350, 16, 0, -655348, 12, 0, -589817, 5, 0, -393207, 13, 0, -327676, 10, 0, -327671, 12, 0, -327670, 15, 0, -262141, 1, 0, -196607, 11, 0 )
+
+[node name="WallBaseTerrain" parent="Terrain" instance=ExtResource( 1 )]
+z_index = -1
+tile_data = PoolIntArray( -131072, 6, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 3, 0, -131067, 3, 0, -131066, 3, 0, -131065, 3, 0, -131064, 3, 0, -131063, 3, 0, -131062, 3, 0, -131061, 3, 0, -131060, 3, 0, -131059, 3, 0, -131058, 3, 0, -131057, 5, 0, -65536, 2, 0, -65535, 8, 0, -65534, 10, 0, -65533, 10, 0, -65532, 10, 0, -65531, 10, 0, -65530, 10, 0, -65529, 10, 0, -65528, 10, 0, -65527, 12, 0, -65526, 12, 0, -65525, 12, 0, -65524, 12, 0, -65523, 12, 0, -65522, 14, 0, -65521, 0, 0, 0, 2, 0, 1, 9, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 13, 0, 10, 13, 0, 11, 13, 0, 12, 13, 0, 13, 13, 0, 14, 15, 0, 15, 0, 0, 65536, 2, 0, 65551, 0, 0, 131072, 2, 0, 131087, 0, 0, 196608, 2, 0, 196623, 0, 0, 262144, 2, 0, 262159, 0, 0, 327680, 2, 0, 327695, 0, 0, 393216, 2, 0, 393231, 0, 0, 458752, 2, 0, 458767, 0, 0, 524288, 7, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 4, 0 )
+
+[node name="Quintal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 600, 351 )
+scale = Vector2( 2.36001, 2.4 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 386, 89 )
+
+[node name="Camera" type="Camera2D" parent="YSort/Player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+limit_left = 37
+limit_top = -55
+limit_right = 731
+limit_bottom = 386
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_top = 0.23
+drag_margin_right = 0.21
+drag_margin_bottom = 0.26
+editor_draw_drag_margin = true
+
+[node name="Cases" parent="YSort" instance=ExtResource( 13 )]
+visible = false
+margin_left = 455.0
+margin_top = 253.0
+margin_right = 455.0
+margin_bottom = 253.0
+
+[node name="CasesCamera" type="Camera2D" parent="YSort/Cases"]
+position = Vector2( 42, -190 )
+zoom = Vector2( 1.2, 1.2 )
+
+[node name="QuadroMissões" parent="YSort" groups=["InteractableObject"] instance=ExtResource( 11 )]
+position = Vector2( 681, 49 )
+scale = Vector2( 1.24922, 1.23937 )
+z_index = 0
+
+[node name="Collision2" type="CollisionShape2D" parent="YSort/QuadroMissões" groups=["InteractableObject"]]
+position = Vector2( 23.2145, 30.6608 )
+shape = SubResource( 1 )
+
+[node name="MesaEscritorio" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 383, 114 )
+scale = Vector2( 1.26604, 1.2 )
+z_index = 0
+
+[node name="Cadeira" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 386, 84 )
+scale = Vector2( 0.88, 1 )
+z_index = 0
+
+[node name="Estante" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 469, 33 )
+scale = Vector2( 1.11913, 1.16 )
+z_index = 0
+
+[node name="Lixeiro" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 356, 136 )
+z_index = 0
+
+[node name="Anotações" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 407, 130 )
+scale = Vector2( 1, 0.96 )
+z_index = 0
+
+[node name="Livro1" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 357, 119 )
+z_index = 0
+
+[connection signal="back_pressed" from="YSort/Cases" to="YSort/QuadroMissões" method="_on_Cases_back_pressed"]
