@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://text/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Credits.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menu_screens/BackButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Cenários/Decor/MenuBG.jpg" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.862745 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.784314 )
+font_data = ExtResource( 1 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 192, 96 )
+scale = Vector2( 0.540845, 0.432432 )
+texture = ExtResource( 4 )
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+margin_left = 75.0
+margin_top = 21.0
+margin_right = 316.0
+margin_bottom = 160.0
+
+[node name="Créditos" type="Label" parent="MainContainer"]
+margin_right = 241.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 230, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Créditos:"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="MainContainer"]
+margin_top = 34.0
+margin_right = 241.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 2 )
+text = "Jogo criado por Matheus Barreto Miranda
+Projeto A3 - SI UNP 2023
+
+Assets utilizados:"
+align = 1
+valign = 1
+
+[node name="HContainer" type="HBoxContainer" parent="."]
+margin_left = 75.0
+margin_top = 136.0
+margin_right = 316.0
+margin_bottom = 156.0
+alignment = 1
+
+[node name="Link" type="Button" parent="HContainer"]
+modulate = Color( 0.12549, 1, 0, 1 )
+margin_left = 16.0
+margin_right = 224.0
+margin_bottom = 20.0
+focus_mode = 0
+custom_colors/font_color = Color( 0.12549, 0.811765, 0.027451, 1 )
+custom_fonts/font = SubResource( 3 )
+enabled_focus_mode = 0
+text = "Clique aqui para conferir os assets utilizados"
+flat = true
+script = ExtResource( 2 )
+
+[node name="BackButton" parent="." instance=ExtResource( 3 )]
+
+[connection signal="mouse_entered" from="HContainer/Link" to="HContainer/Link" method="_on_Link_mouse_entered"]
+[connection signal="mouse_exited" from="HContainer/Link" to="HContainer/Link" method="_on_Link_mouse_exited"]
+[connection signal="pressed" from="HContainer/Link" to="HContainer/Link" method="_on_Link_pressed"]

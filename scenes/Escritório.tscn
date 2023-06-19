@@ -62,13 +62,13 @@ editor_draw_drag_margin = true
 
 [node name="Cases" parent="YSort" instance=ExtResource( 13 )]
 visible = false
-margin_left = 455.0
-margin_top = 253.0
-margin_right = 455.0
-margin_bottom = 253.0
+margin_left = 506.0
+margin_top = 235.0
+margin_right = 506.0
+margin_bottom = 235.0
 
 [node name="CasesCamera" type="Camera2D" parent="YSort/Cases"]
-position = Vector2( 42, -190 )
+position = Vector2( -6, -169 )
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="QuadroMissões" parent="YSort" groups=["InteractableObject"] instance=ExtResource( 11 )]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Personagens/Detetive.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://scenes/LupaIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12, 8 )
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+script = ExtResource( 2 )
+speed = 100
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.5, 3 )
+texture = ExtResource( 1 )
+hframes = 6
+vframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+anims/Walk = SubResource( 3 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 16 )
+shape = SubResource( 4 )
+
+[node name="LupaIcon" parent="." instance=ExtResource( 3 )]
+z_index = 0
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[connection signal="use_move_vector" from="HUD" to="." method="_on_HUD_use_move_vector"]

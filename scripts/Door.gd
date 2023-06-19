@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var porta := $PortaIcon as AnimatedSprite
-onready var mission_accepted : Button = get_parent().get_node("YSort/Cases/Background/Case1Container/AcceptCase1")
+onready var mission_accepted : Button = get_parent().get_node("YSort/Cases/Sprite/AcceptCase1")
 onready var show_interaction: TouchScreenButton = get_parent().get_node("YSort/Player/HUD/InteractButton")
 
 var on_door := false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://text/PlayfairDisplay-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/Cenários/Decor/MenuBG.jpg" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -14,7 +15,7 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 12
 outline_size = 1
-outline_color = Color( 0, 0, 0, 0.392157 )
+outline_color = Color( 0, 0, 0, 0.862745 )
 extra_spacing_top = -5
 font_data = ExtResource( 1 )
 
@@ -23,10 +24,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 192, 96 )
+scale = Vector2( 0.540845, 0.432432 )
+texture = ExtResource( 3 )
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
 margin_left = 72.0
